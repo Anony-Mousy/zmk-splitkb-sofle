@@ -76,7 +76,3 @@
         };
     };
 };
-
-/ {
-    compatible = "zmk,battery-nrf-vddh";
-};
