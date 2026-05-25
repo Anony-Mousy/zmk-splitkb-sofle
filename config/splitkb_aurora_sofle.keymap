@@ -16,8 +16,14 @@
     chain-length = <36>; // Uncomment if using both per-key and underglow LEDs
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
-/* */
-
+/*
+    backlight: gpioleds {
+        compatible = "gpio-leds";
+        gpio_led_0 {
+            gpios = <&arduino_header 12 GPIO_ACTIVE_HIGH>;
+        };
+    };
+*/
 / {
     macros {
         macro_underglow_switcher_raise: macro_underglow_switcher_raise {
