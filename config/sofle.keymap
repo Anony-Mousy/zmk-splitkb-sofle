@@ -18,8 +18,8 @@
 /* Uncomment this block if using RGB */
 &led_strip {
     // chain-length = <6>;
-    // chain-length = <36>; // Uncomment if using both per-key and underglow LEDs
-    chain-length = <72>;
+    chain-length = <36>; // Uncomment if using both per-key and underglow LEDs
+    // chain-length = <72>;
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 /*
@@ -57,7 +57,7 @@
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(125,100,50)>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo LOWER>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(265,10,50)>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(265,100,50)>
                 ;
         };
     };
