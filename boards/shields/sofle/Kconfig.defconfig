@@ -26,7 +26,11 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 6
 
-endif
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+endif # SHIELD_SOFLE_DONGLE
 
 if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE
 config ZMK_SPLIT
@@ -39,14 +43,6 @@ config I2C
 
 config SSD1306
     default y
-
-if SHIELD_SOFLE_DONGLE_XIAO || SHIELD_SOFLE_DONGLE_PRO_MICRO
-
-choice ZMK_DISPLAY_WORK_QUEUE
-    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-endchoice
-
-endif
 
 endif # ZMK_DISPLAY
 
@@ -71,7 +67,6 @@ if ZMK_RGB_UNDERGLOW
 
 config WS2812_STRIP
     default y
-endif
 
 endif # ZMK_RGB_UNDERGLOW
-endif
+endif # SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE
