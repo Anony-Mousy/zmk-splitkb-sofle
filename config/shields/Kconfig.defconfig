@@ -1,3 +1,10 @@
+if SHIELD_SOFLE_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif
+
 if SHIELD_SOFLE_DONGLE
 
 # Max 16 characters in keyboard name
