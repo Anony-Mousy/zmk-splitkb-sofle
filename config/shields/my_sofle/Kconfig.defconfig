@@ -5,7 +5,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_SOFLE_DONGLE
+if SHIELD_MY_SOFLE_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
