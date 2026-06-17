@@ -3,10 +3,10 @@ if SHIELD_SOFLE_DONGLE
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+# Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
     default "Sofle"
 
-# Max 16 characters in keyboard name
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
@@ -32,7 +32,7 @@ endchoice
 
 endif # SHIELD_SOFLE_DONGLE
 
-if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE
+if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE || SHIELD_SOFT_LEFT_PERIPHERAL
 config ZMK_SPLIT
     default y
 
@@ -69,4 +69,4 @@ config WS2812_STRIP
     default y
 
 endif # ZMK_RGB_UNDERGLOW
-endif # SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE
+endif # SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT || SHIELD_SOFLE_DONGLE || SHIELD_SOFT_LEFT_PERIPHERAL
