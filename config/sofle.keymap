@@ -34,7 +34,7 @@
 / {
     macros {
         macro_underglow_switcher_raise: macro_underglow_switcher_raise {
-            label = "macro_underglow_switcher_raise";
+            display-name = "macro_underglow_switcher_raise";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -48,7 +48,7 @@
                 ;
         };
         macro_underglow_switcher_lower: macro_underglow_switcher_lower {
-            label = "macro_underglow_switcher_lower";
+            display-name = "macro_underglow_switcher_lower";
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
