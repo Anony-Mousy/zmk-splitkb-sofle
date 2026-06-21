@@ -35,7 +35,7 @@ include:
     artifact-name: sofle-dongle-right
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n # -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: nice_nano_v2 # nrf52840dongle_nrf52840
-    shield: dongle_screen sofle_dongle
+    shield: sofle_dongle dongle_screen
     snippet: studio-rpc-usb-uart
     artifact-name: sofle-dongle-screen
     cmake-args: -DCONFIG_ZMK_STUDIO=y  # -DCONFIG_ZMK_STUDIO_LOCKING=n
