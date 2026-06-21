@@ -15,11 +15,6 @@
     };
 };
 
-&st7769 {
-    width = <240>;
-    height = <320>;
-};
-
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
