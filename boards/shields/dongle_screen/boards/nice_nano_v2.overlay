@@ -67,7 +67,7 @@ disp_spi: &spi3 {
        vdvs = <0x20>;
        mdac = <0x00>;
        gamma = <0x01>;
-       colmod = <0x6 << 4 | 6>; // <ST7789V_COLMOD_RGB_262K | ST7789V_COLMOD_FMT_18bit>; // Orig: <0x05>; // colmod = <(0x6 << 4 | 6)>;
+       colmod = <0x66>; // <ST7789V_COLMOD_RGB_262K | ST7789V_COLMOD_FMT_18bit>; // Orig: <0x05>; // colmod = <(0x6 << 4 | 6)>;
        lcm = <0x2c>;
        porch-param = [ 0c 0c 00 33 33  ];
        cmd2en-param = [ 5a 69 02 01  ];
