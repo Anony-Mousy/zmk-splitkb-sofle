@@ -83,7 +83,7 @@ static void lvgl_log(const char *buf)
 		LOG_ERR("%s", buf + strlen("[Error] "));
 		break;
 	case 'W':
-		LOG_WRN("%s", buf + strlen("Warn] "));
+		LOG_WRN("%s", buf + strlen("[Warn] "));
 		break;
 	case 'I':
 		LOG_INF("%s", buf + strlen("[Info] "));
