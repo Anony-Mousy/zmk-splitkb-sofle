@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyright (c) 2023 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -7,23 +7,32 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/led/led.h>
 
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
 
+/* Uncomment this block if using RGB */
 &led_strip {
     // chain-length = <6>;
     chain-length = <36>; // Uncomment if using both per-key and underglow LEDs
     // chain-length = <72>;
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
-
+/*
+    backlight: gpioleds {
+        compatible = "gpio-leds";
+        gpio_led_0 {
+            gpios = <&arduino_header 12 GPIO_ACTIVE_HIGH>;
+        };
+    };
+*/
 / {
-   macros {
+    macros {
         macro_u_s_raise: macro_underglow_switcher_raise {
             display-name = "macro_underglow_switcher_raise";
             compatible = "zmk,behavior-macro";
@@ -79,7 +88,8 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
+            display-name = "Default";
+
 // --------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2   |  3   |  4  |   5   |                   |   6   |  7    |  8    |  9   |   0   | TILDE |
 // |  TAB  |  Q  |  W   |  E   |  R  |   T   |                   |   Y   |  U    |  I    |  O   |   P   | MINUS |
@@ -94,13 +104,14 @@
 &kp LSHFT    &kp Z   &kp X      &kp C     &kp V     &kp B             &kp C_MUTE  &kp RET  &kp N             &kp M     &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
                      &kp LCTRL  &kp LALT  &kp LGUI  &macro_u_s_lower  &kp SPACE   &kp RET  &macro_u_s_raise  &kp BSPC  &kp RALT   &kp RCTRL
              >;
+
 //                             Course Scrolling        Fine Scrolling
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DN>;
         };
 
         lower_layer {
-            display-name = "lower";
-// TODO: Some binds are waiting for shifted keycode support.
+            display-name = "Lower";
+
 // ---------------------------------------------------------------------------------------------
 // | F1  | F2  | F3  | F4  | F5  | F6  |                   | F7  | F8  | F9  | F10 | F11 | F12 |
 // | F13 | F14 | F15 | F16 | F17 | F18 |                   | F19 | F20 | F21 | F22 | F23 | F24 |
@@ -120,7 +131,8 @@
         };
 
         raise_layer {
-            display-name = "raise";
+            display-name = "Raise";
+
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |       |      |                |      |      |       |      |       |       |
 // |       | INS  |      |   ^   |       | PGUP |                |      |      |       |      |       |       |
@@ -140,6 +152,8 @@
         };
 
         adjust_layer {
+            display-name = "Adjust";
+
 // -----------------------------------------------------------------------------------------------------------------------------
 // | BTCLR  |   BT1   |   BT2   |   BT3   |   BT4   |   BT5   |                   |      |      |       |      |       |       |
 // |        |         |         |         |         |         |                   |      |      |       |      |       |       |
@@ -158,6 +172,5 @@
 
             sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
         };
-
     };
 };
