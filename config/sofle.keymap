@@ -26,15 +26,6 @@
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 
-/*
-    backlight: gpioleds {
-        compatible = "gpio-leds";
-        gpio_led_0 {
-            gpios = <&arduino_header 12 GPIO_ACTIVE_HIGH>;
-        };
-    };
-*/
-
 / {
     macros {
         macro_u_s_raise: macro_underglow_switcher_raise {
@@ -83,16 +74,11 @@
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
         };
-
-        /*        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };*/
     };
 
     behaviors {
         rgb_encoder: rgb_encoder {
-            compatible = "zmk,behaviour-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
