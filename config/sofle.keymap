@@ -112,7 +112,7 @@
                      &kp LCTRL  &kp LALT  &kp LGUI  &macro_u_s_lower  &kp SPACE     &kp RET  &macro_u_s_raise  &kp BSPC  &kp RALT   &kp RCTRL
             >;
 
-            //                             Course Scrolling        Fine Scrolling
+            //                 Course Scrolling        Fine Scrolling
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };
@@ -181,9 +181,9 @@
                                     &none            &none         &none         &none            &none              &none  &none  &none  &none  &none
             >;
 
-            //            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
 
-            sensor-bindings = <&rot_rgb RGB_BRI RGB_BRD &inc_dec_kp PG_UP PG_DN>;
+            // sensor-bindings = <&rot_rgb RGB_BRI RGB_BRD &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
