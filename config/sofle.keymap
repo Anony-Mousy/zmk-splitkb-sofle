@@ -82,6 +82,11 @@
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
+        rot_rgb: sensor_rotate_rgb {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&rgb_ug>, <&rgb_ug>;
+        };
     };
 
     keymap {
@@ -170,7 +175,8 @@
                                     &none            &none            &none            &none            &none               &none  &none  &none  &none  &none
             >;
 
-            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
+//            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&rot_rgb RGB_BRI RGB_BRD &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
